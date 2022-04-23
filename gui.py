@@ -2,6 +2,12 @@ import PySimpleGUI as sg
 from gui_builder import GuiBuilder
 
 class Gui:
+    """
+    The GUI class contains all initializations of graphical windows and the program loops
+    The constructor takes a list of users that are part of the Azure Active Directory, it 
+    also takes an instance of the API class so that it can make the API calls internally
+    
+    """
 
     def __init__(self, users, api_instance):
         self.theme = sg.theme()   # Add a touch of color  

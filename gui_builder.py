@@ -1,6 +1,12 @@
 import PySimpleGUI as sg
 
 class GuiBuilder:
+    """
+    Contains all of the GUI window frameworks
+    Each build function returns a window with the layout
+    Each layout function builds the list 
+
+    """
     def __init__(self):
         print("GuiBuilder initialized")
 
@@ -81,8 +87,7 @@ class GuiBuilder:
     def sched_layout(self):
         hours = ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
         minutes = ['00', '05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55']
-        
-        # TODO: Make spin buttons loop
+
         return [
             [sg.Column(
                 [

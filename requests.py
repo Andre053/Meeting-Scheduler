@@ -4,6 +4,11 @@ import requests as req, json # make API requests and format json response
 from auth import Service
 
 class Api(Service):
+    """
+    This class inherits Service, allowing for the authentication of the application
+    The API class contains methods to query the API
+
+    """
 
     def __init__(self):
         super().__init__() # runs the super class constructor
@@ -38,7 +43,11 @@ class Api(Service):
         return users
 
     def create_meeting(self, user_id, subject, content, start_time, end_time, location, attendees, is_online_meeting=False, new_time_proposals=False):
+        """
+        This request assumes that the application host user has 
+        teamsForBusiness as an online meeting provider
         
+        """
         url = "{0}/users/{1}/calendar/events".format(self.base_url, user_id)
 
         # date is YYYY-MM-DDT23:59
